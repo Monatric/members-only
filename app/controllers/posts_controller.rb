@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [ :new, :create ]
 
   def index
+    @posts = Post.all
   end
 
   def new
@@ -15,7 +16,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_url, notice: "Post saved successfully!"
     else
-      flash.now[:error] = "Post cannot be saved."
+      flash.now[:alert] = "Post cannot be saved."
       render :new, status: :unprocessable_entity
     end
   end

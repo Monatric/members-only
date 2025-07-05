@@ -2,14 +2,6 @@
 <p>Find me in app/views/posts/new.html.erb</p>
 <div><%= link_to "See all posts", posts_path %></div>
 
-<% flash.each do |type, msg| %>
-  <br>
-  <div>
-    <%= "#{type}: #{msg}" %>
-  </div>
-  <br>
-<% end %>
-
 <% if @post.errors.any? %>
   <div>
     <%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:
