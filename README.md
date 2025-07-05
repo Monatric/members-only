@@ -1,24 +1,5 @@
-# README
+# Project: Members Only!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is part of the Ruby on Rails curriculum, [Members Only project](https://www.theodinproject.com/lessons/ruby-on-rails-members-only).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project focuses on building user authentication with Devise gem, posting content with user, and using Devise's helper methods to restrict non-logged in users from accessing only logged in users can.
