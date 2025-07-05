@@ -1,3 +1,33 @@
 <h1>Posts#new</h1>
 <p>Find me in app/views/posts/new.html.erb</p>
 <div><%= link_to "See all posts", posts_path %></div>
+
+<% flash.each do |type, msg| %>
+  <br>
+  <div>
+    <%= "#{type}: #{msg}" %>
+  </div>
+  <br>
+<% end %>
+
+<% if @post.errors.any? %>
+  <div>
+    <%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:
+    <ul>
+      <% @post.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+
+<% end %>
+
+<%= form_with model: @post do |form| %>
+  <div><%= form.label :title %></div>
+  <div><%= form.text_field :title %></div>
+  <br>
+  <div><%= form.label :body %></div>
+  <div><%= form.text_area :body, rows: 10 %></div>
+  <br>
+  <%= form.submit %>
+<% end %>
