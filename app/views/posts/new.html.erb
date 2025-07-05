@@ -24,10 +24,10 @@
 
 <%= form_with model: @post do |form| %>
   <div><%= form.label :title %></div>
-  <div><%= form.text_field :title %></div>
+  <div><%= form.text_field :title, maxlength: 50 %></div>
   <br>
   <div><%= form.label :body %></div>
-  <div><%= form.text_area :body, rows: 10 %></div>
+  <div><%= form.text_area :body, rows: 10, cols: 50, maxlength: 200 %></div>
   <br>
   <%= form.submit %>
 <% end %>
